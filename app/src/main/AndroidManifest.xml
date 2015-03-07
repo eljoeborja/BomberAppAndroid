@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.s4.demodb" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".InsertActivity"
+            android:label="@string/title_activity_insert" >
+        </activity>
+        <activity
+            android:name=".UpdateActivity"
+            android:label="@string/title_activity_update" >
+        </activity>
+        <activity
+            android:name=".InsertActivityVehiculo"
+            android:label="@string/title_activity_insert_vehiculo" >
+        </activity>
+        <activity
+            android:name=".ListVehiculoActivity"
+            android:label="@string/title_activity_list_vehiculo" >
+        </activity>
+        <activity
+            android:name=".UpdateActivityVehiculo"
+            android:label="@string/title_activity_update_vehiculo" >
+        </activity>
+        <activity
+            android:name=".ListEmergenciaActivity"
+            android:label="@string/title_activity_list_emergencia" >
+        </activity>
+        <activity
+            android:name=".InsertActivityEmergencia"
+            android:label="@string/title_activity_list_emergencia" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="codigo">Code</string>
+    <string name="nombre">Name</string>
+    <string name="contrasena">Password</string>
+    <string name="action_insert">Insert</string>
+</resources>

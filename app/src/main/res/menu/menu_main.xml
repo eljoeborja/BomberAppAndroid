@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context="com.s4.demodb.MainActivity">
+    <item android:id="@+id/action_insert" android:title="@string/action_insert"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_refresh" android:title="@string/action_refresh"
+        android:orderInCategory="99" app:showAsAction="never" />
+    <item android:id="@+id/opciones" android:title="Vehiculo"
+        android:orderInCategory="99" app:showAsAction="never" />
+    <item android:id="@+id/listarvehiculos" android:title="@string/listarvehiculos"
+        android:orderInCategory="99" app:showAsAction="never" />
+    <item android:id="@+id/listaremergencias" android:title="Emergencias"
+        android:orderInCategory="99" app:showAsAction="never" />
+</menu>
