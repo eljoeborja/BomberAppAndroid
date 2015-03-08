@@ -1,7 +1,9 @@
 package com.s4.demodb.rest;
 
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -76,8 +78,10 @@ public class ActualizaVehiculo extends ActionBarActivity {
                 }
             });
 
+            String direccion = PreferenceManager.getDefaultSharedPreferences(ActualizaVehiculo.this.getApplicationContext()).getString("direccion_ip","127.0.0.1");
+            String dispositivo = PreferenceManager.getDefaultSharedPreferences(ActualizaVehiculo.this.getApplicationContext()).getString("dispositivo","TABLET1");
 
-            return RestHelper.POST("http://192.168.1.10:8080/BomberApp/ws/vehiculo", json);
+            return RestHelper.POST("http://"+direccion+":8080/BomberApp/ws/vehiculo?dispositivo="+dispositivo, json);
         }
 
         // onPostExecute displays the results of the AsyncTask.

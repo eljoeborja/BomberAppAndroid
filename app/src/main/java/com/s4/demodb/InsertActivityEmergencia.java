@@ -119,8 +119,8 @@ public class InsertActivityEmergencia extends ActionBarActivity {
             String comandante  = ((EditText)findViewById(R.id.campoComandante)).getText().toString();
             Integer comandante2 = Integer.parseInt(comandante);
             Integer estado = 0;
-            String tipoe  = ((EditText)findViewById(R.id.campoTipoe)).getText().toString();
-            Integer tipoe2 = Integer.parseInt(tipoe);
+//            String tipoe  = ((EditText)findViewById(R.id.campoTipoe)).getText().toString();
+            Integer tipoe2 = Integer.parseInt("1");
 
             Emergencia emergencia = new Emergencia(null, fecha, hora, informante2, informacion_recibida, medio_informacion2, otro_medio_informacion, persona_confirmacion, medio_confirmacion2, descripcion_otro_medio, direccion, inmueble_clase2, inmueble_propietario, inmueble_administrador, inmueble_arrendatario, novedades, comandante2, estado, tipoe2);
 

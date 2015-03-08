@@ -138,6 +138,8 @@ public class MainActivity extends ActionBarActivity implements ActivityNavigatio
         }else if(id == R.id.subirVehiculos){
             Intent intent = new Intent(this, ActualizaVehiculo.class);
             startActivity(intent);
+        }else if(id == R.id.settings){
+            startActivity(new Intent(this,SettingsActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
