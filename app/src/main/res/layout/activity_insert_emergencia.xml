@@ -112,34 +112,27 @@
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:weightSum="1">
-            <RadioGroup android:layout_width="wrap_content"
-                android:layout_gravity="center_horizontal" android:layout_height="148dp"
-                android:layout_weight="1" android:id="@+id/medioInformacion"
-                android:weightSum="1">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/medioInformacion">
                 <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/OpcionTelefono"
-                    android:text="Teléfono"
-                    android:checked="false">
-                </RadioButton>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/OpcionPersona"
-                    android:text="Personalmente">
-                </RadioButton>
-                <RadioButton
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Personalmente"/>
+                <RadioButton
+                    android:id="@+id/OpcionTelefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Teléfono"/>
+                <RadioButton
                     android:id="@+id/OpcionOtros"
-                    android:text="Otros"
-                    android:layout_weight="1.98"
-                    android:checked="false">
-                </RadioButton>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Otros"/>
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -200,25 +193,27 @@
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:weightSum="1">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/medioConfirmacion"
-                android:layout_weight="1">
-                <RadioButton android:id="@+id/OpcionTelefonoc"
+                android:id="@+id/medioConfirmacion">
+                <RadioButton
+                    android:id="@+id/OpcionPersonac"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Teléfono" />
-
-                <RadioButton android:id="@+id/OpcionOtrosc"
-                    android:layout_width="108dp"
+                    android:text="Personalmente"/>
+                <RadioButton
+                    android:id="@+id/OpcionTelefonoc"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Otros"
-                    android:checked="true" />
-
+                    android:text="Teléfono"/>
+                <RadioButton
+                    android:id="@+id/OpcionOtrosc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Otros"/>
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -271,15 +266,35 @@
                 android:layout_height="fill_parent"
                 android:text="@string/eme_inmueble_clase"
                 android:id="@+id/labelCampoClase_inmueble"
-                android:layout_weight="0.5"
+                android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:singleLine="false"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
-            <EditText
-                android:layout_width="0dp"
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/campoClase_inmueble"
-                android:layout_weight="0.5" />
+                android:id="@+id/claseInmueble">
+                <RadioButton
+                    android:id="@+id/OpcionResidencial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Residencial"/>
+                <RadioButton
+                    android:id="@+id/OpcionComercial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comercial"/>
+                <RadioButton
+                    android:id="@+id/OpcionIndustrial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Industrial"/>
+            </RadioGroup>
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -385,26 +400,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/campoComandante"
-                android:layout_weight="0.5" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:weightSum="1">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:text="@string/eme_tipoe"
-                android:id="@+id/labelTipoe"
-                android:layout_weight="0.5"
-                android:gravity="center_vertical"
-                android:singleLine="false"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/campoTipoe"
                 android:layout_weight="0.5" />
         </LinearLayout>
         <LinearLayout
