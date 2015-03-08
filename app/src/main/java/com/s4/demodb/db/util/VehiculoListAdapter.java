@@ -30,11 +30,11 @@ public class VehiculoListAdapter extends ArrayAdapter<Vehiculo> {
         TextView labelPlaca = (TextView) convertView.findViewById(R.id.labelPlaca);
         TextView labelModelo = (TextView) convertView.findViewById(R.id.labelModelo);
         if(vehiculo!=null){
-            if(vehiculo.getPlaca()!=null){
-                labelPlaca.setText(vehiculo.getPlaca());
+            if(vehiculo.getVehPlaca()!=null){
+                labelPlaca.setText(vehiculo.getVehPlaca());
             }
-            if(vehiculo.getModelo()!=null){
-                labelModelo.setText(vehiculo.getModelo());
+            if(vehiculo.getVehModelo()!=null){
+                labelModelo.setText(vehiculo.getVehModelo());
             }
         }
         return convertView;

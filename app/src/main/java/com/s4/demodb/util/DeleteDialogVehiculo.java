@@ -40,7 +40,7 @@ public class DeleteDialogVehiculo extends DialogFragment {
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(getActivity());
 
-        builder.setMessage("¿Confirma que desea eliminar el vehiculo "+vehiculo.getPlaca()+"?")
+        builder.setMessage("¿Confirma que desea eliminar el vehiculo "+vehiculo.getVehPlaca()+"?")
                 .setTitle("Confirmacion")
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

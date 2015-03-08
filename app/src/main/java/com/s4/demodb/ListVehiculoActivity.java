@@ -2,7 +2,6 @@ package com.s4.demodb;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -22,7 +21,6 @@ import com.s4.demodb.db.util.VehiculoListAdapter;
 import com.s4.demodb.util.ActivityNavigationListenerVehiculo;
 import com.s4.demodb.util.DeleteDialogVehiculo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -46,35 +44,12 @@ public class ListVehiculoActivity extends ActionBarActivity implements ActivityN
     private void setUpList() {
 
         SQLiteDatabase db = dbOpenHelper.getReadableDatabase();
-
-        Cursor c = db.query("vehiculo", null, null, null, null, null, null);
-
-        List<Vehiculo> vehiculos = new ArrayList<>();
-
-        if(c.moveToFirst()){
-            do{
-                Integer id = Integer.parseInt(c.getString(0));
-                String clase = c.getString(1);
-                String placa = c.getString(2);
-                String modelo = c.getString(3);
-                String propietario = c.getString(4);
-                String soat = c.getString(5);
-                String servicio = c.getString(6);
-                String marca = c.getString(7);
-                String empresa = c.getString(8);
-                String conductor = c.getString(9);
-                String compania_seguro = c.getString(10);
-                Integer veh_estado = Integer.parseInt(c.getString(11));
-                System.out.println("Id = "+id+" - Clase = "+clase+" - Placa = "+placa+" - Modelo = "+modelo+" - Propietario = "+propietario+" - Soat = "+soat);
-                System.out.println("Servicio = "+servicio+" - Marca = "+marca+" - Empresa = "+empresa+" - Conductor = "+conductor+" - Compañia de Seguro = "+compania_seguro+" - Estado = "+veh_estado);
-                Vehiculo vehiculo = new Vehiculo(id,clase,placa,modelo,propietario,soat,servicio,marca,empresa,conductor,compania_seguro,veh_estado);
-                vehiculos.add(vehiculo);
-            }while (c.moveToNext());
-        }
+        List<Vehiculo> vehiculos = Vehiculo.getList(db,true);
         adapter = new VehiculoListAdapter(this,vehiculos);
         ListView listView = (ListView) findViewById(R.id.listado);
         listView.setAdapter(adapter);
         registerForContextMenu(listView);
+
     }
 
     @Override
@@ -140,12 +115,12 @@ public class ListVehiculoActivity extends ActionBarActivity implements ActivityN
 
         if(vehiculo.remove(dbOpenHelper.getWritableDatabase())==1){
             Toast.makeText(getApplicationContext(),
-                    getString(R.string.delete_message_vehiculo).concat(" "+vehiculo.getPlaca()),Toast.LENGTH_SHORT)
+                    getString(R.string.delete_message_vehiculo).concat(" "+vehiculo.getVehPlaca()),Toast.LENGTH_SHORT)
                     .show();
             setUpList();
         }else{
             Toast.makeText(getApplicationContext(),
-                    getString(R.string.delete_error_vehiculo).concat(" "+vehiculo.getPlaca()),Toast.LENGTH_SHORT)
+                    getString(R.string.delete_error_vehiculo).concat(" "+vehiculo.getVehPlaca()),Toast.LENGTH_SHORT)
                     .show();
         }
     }

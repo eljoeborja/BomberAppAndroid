@@ -44,6 +44,7 @@
     <string name="compania_seguro__veh">Compañia de Seguro</string>
     <string name="title_activity_insert_vehiculo">Insertar Vehiculos</string>
     <string name="listarvehiculos">Listar Vehiculos</string>
+    <string name="subirVehicilos">Subir Vehiculos</string>
     <string name="eme_fecha">Fecha Emergencia</string>
     <string name="eme_hora">Hora de Registro Emergencia</string>
     <string name="eme_informante">Informante de la emergencia</string>
@@ -61,4 +62,5 @@
     <string name="eme_novedades">Novedades u observaciones</string>
     <string name="eme_comandante">Comandante de Incidente</string>
     <string name="eme_tipoe">Tipo de Emergencia</string>
+    <string name="title_activity_actualiza_vehiculo">Actualizar Vehiculos</string>
 </resources>

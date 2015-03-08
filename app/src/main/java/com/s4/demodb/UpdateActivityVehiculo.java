@@ -33,7 +33,7 @@ public class UpdateActivityVehiculo extends ActionBarActivity {
 
         if(getIntent().hasExtra(ListVehiculoActivity.KEY_USUARIO)){
             vehiculo = (Vehiculo) getIntent().getSerializableExtra(ListVehiculoActivity.KEY_USUARIO);
-            codigoOriginal = vehiculo.getId();
+            codigoOriginal = vehiculo.getVehId();
             System.out.println("Codigo Original traido de bd = "+codigoOriginal);
         }else{
             setResult(Activity.RESULT_CANCELED);
@@ -68,28 +68,28 @@ public class UpdateActivityVehiculo extends ActionBarActivity {
         EditText campoConductor = (EditText) findViewById(R.id.campoConductor);
         EditText campoCompaniaSeguro = (EditText) findViewById(R.id.campoCompaniaSeguro);
 
-        if(vehiculo.getClase()!=null)
-            campoClase.setText(vehiculo.getClase());
-        if(vehiculo.getPlaca()!=null)
-            campoPlaca.setText(vehiculo.getPlaca());
-        if(vehiculo.getModelo()!=null)
-            campoModelo.setText(vehiculo.getModelo());
-        if(vehiculo.getPropietario()!=null)
-            campoPropietario.setText(vehiculo.getPropietario());
-        if(vehiculo.getSoat()!=null)
-            campoSoat.setText(vehiculo.getSoat());
-        if(vehiculo.getServicio()!=null)
-            campoServicio.setText(vehiculo.getServicio());
-        if(vehiculo.getMarca()!=null)
-            campoMarca.setText(vehiculo.getMarca());
-        if(vehiculo.getEmpresa()!=null)
-            campoEmpresa.setText(vehiculo.getEmpresa());
-        if(vehiculo.getConductor()!=null)
-            campoConductor.setText(vehiculo.getConductor());
-        if(vehiculo.getCompania_seguro()!=null)
-            campoCompaniaSeguro.setText(vehiculo.getCompania_seguro());
+        if(vehiculo.getVehClase()!=null)
+            campoClase.setText(vehiculo.getVehClase());
+        if(vehiculo.getVehPlaca()!=null)
+            campoPlaca.setText(vehiculo.getVehPlaca());
+        if(vehiculo.getVehModelo()!=null)
+            campoModelo.setText(vehiculo.getVehModelo());
+        if(vehiculo.getVehPropietario()!=null)
+            campoPropietario.setText(vehiculo.getVehPropietario());
+        if(vehiculo.getVehSoat()!=null)
+            campoSoat.setText(vehiculo.getVehSoat());
+        if(vehiculo.getVehServicio()!=null)
+            campoServicio.setText(vehiculo.getVehServicio());
+        if(vehiculo.getVehMarca()!=null)
+            campoMarca.setText(vehiculo.getVehMarca());
+        if(vehiculo.getVehEmpresa()!=null)
+            campoEmpresa.setText(vehiculo.getVehEmpresa());
+        if(vehiculo.getVehConductor()!=null)
+            campoConductor.setText(vehiculo.getVehConductor());
+        if(vehiculo.getVehCompaniaSeguro()!=null)
+            campoCompaniaSeguro.setText(vehiculo.getVehCompaniaSeguro());
 
-        setTitle(getTitle().toString().concat(" ").concat(vehiculo.getPlaca()));
+        setTitle(getTitle().toString().concat(" ").concat(vehiculo.getVehPlaca()));
 
     }
 

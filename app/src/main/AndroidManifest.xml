@@ -12,6 +12,7 @@
             android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -43,6 +44,16 @@
             android:name=".InsertActivityEmergencia"
             android:label="@string/title_activity_list_emergencia" >
         </activity>
+        <activity
+            android:name=".rest.ActualizaVehiculo"
+            android:label="@string/title_activity_actualiza_vehiculo"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.s4.demodb.MainActivity" />
+        </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
