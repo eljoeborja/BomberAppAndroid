@@ -31,11 +31,11 @@ public class EmergenciaListAdapter extends ArrayAdapter<Emergencia> {
         TextView labelDireccion = (TextView) convertView.findViewById(R.id.labelDireccion);
 
         if(emergencia!=null){
-            if(emergencia.getId()!=null){
-                labelHora.setText(emergencia.getHora().toString());
+            if(emergencia.getEmeId()!=null){
+                labelHora.setText(emergencia.getEmeHora().toString());
             }
-            if(emergencia.getDireccion()!=null){
-                labelDireccion.setText(emergencia.getDireccion());
+            if(emergencia.getEmeDireccion()!=null){
+                labelDireccion.setText(emergencia.getEmeDireccion());
             }
         }
         return convertView;

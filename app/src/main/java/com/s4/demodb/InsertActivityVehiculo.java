@@ -56,7 +56,6 @@ public class InsertActivityVehiculo extends ActionBarActivity {
             String conductor = ((EditText)findViewById(R.id.campoConductor)).getText().toString();
             String compania_seguro = ((EditText)findViewById(R.id.campoCompaniaSeguro)).getText().toString();
             Integer veh_estado = 0;
-
             Vehiculo vehiculo = new Vehiculo(null,clase,placa,modelo,propietario,soat,servicio,marca,empresa,conductor,compania_seguro,veh_estado);
 
             long result = vehiculo.insert(dbOpenHelper.getWritableDatabase());
@@ -75,27 +74,9 @@ public class InsertActivityVehiculo extends ActionBarActivity {
         }
 
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 //        getMenuInflater().inflate(R.menu.menu_insert, menu);
         return false;
     }
-
-
-    //    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
 }

@@ -46,9 +46,16 @@ public class ListEmergenciaActivity extends ActionBarActivity implements Activit
     private void setUpList() {
 
         SQLiteDatabase db = dbOpenHelper.getReadableDatabase();
+        List<Emergencia> emergencias = Emergencia.getList(db,true);
+        adapter = new EmergenciaListAdapter(this,emergencias);
+        ListView listView = (ListView) findViewById(R.id.listado);
+        listView.setAdapter(adapter);
+        registerForContextMenu(listView);
 
+
+/*
+        SQLiteDatabase db = dbOpenHelper.getReadableDatabase();
         Cursor c = db.query("emergencia", null, null, null, null, null, null);
-
         List<Emergencia> emergencias = new ArrayList<>();
 
         if(c.moveToFirst()){
@@ -79,7 +86,7 @@ public class ListEmergenciaActivity extends ActionBarActivity implements Activit
         adapter = new EmergenciaListAdapter(this,emergencias);
         ListView listView = (ListView) findViewById(R.id.listado);
         listView.setAdapter(adapter);
-        registerForContextMenu(listView);
+        registerForContextMenu(listView);*/
     }
 
     @Override
@@ -141,16 +148,16 @@ public class ListEmergenciaActivity extends ActionBarActivity implements Activit
     @Override
     public void onDialogPositiveClick(DeleteDialogEmergencia dialog) {
 
-        Emergencia vehiculo = dialog.getEmergencia();
+        Emergencia emergencia = dialog.getEmergencia();
 
-        if(vehiculo.remove(dbOpenHelper.getWritableDatabase())==1){
+        if(emergencia.remove(dbOpenHelper.getWritableDatabase())==1){
             Toast.makeText(getApplicationContext(),
-                    getString(R.string.delete_message_emergencia).concat(" "+vehiculo.getFecha()).concat("-"+vehiculo.getDireccion()),Toast.LENGTH_SHORT)
+                    getString(R.string.delete_message_emergencia).concat(" "+emergencia.getEmeFecha()).concat("-"+emergencia.getEmeDireccion()),Toast.LENGTH_SHORT)
                     .show();
             setUpList();
         }else{
             Toast.makeText(getApplicationContext(),
-                    getString(R.string.delete_error_emergencia).concat(" "+vehiculo.getFecha()).concat("-"+vehiculo.getDireccion()),Toast.LENGTH_SHORT)
+                    getString(R.string.delete_error_emergencia).concat(" "+emergencia.getEmeFecha()).concat("-"+emergencia.getEmeDireccion()),Toast.LENGTH_SHORT)
                     .show();
         }
     }

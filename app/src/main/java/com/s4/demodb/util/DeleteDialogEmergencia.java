@@ -38,7 +38,7 @@ public class DeleteDialogEmergencia extends DialogFragment {
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(getActivity());
 
-        builder.setMessage("¿Confirma que desea eliminar la emergencia "+emergencia.getHora()+" - "+emergencia.getDireccion()+"?")
+        builder.setMessage("¿Confirma que desea eliminar la emergencia "+emergencia.getEmeHora()+" - "+emergencia.getEmeDireccion()+"?")
                 .setTitle("Confirmacion")
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

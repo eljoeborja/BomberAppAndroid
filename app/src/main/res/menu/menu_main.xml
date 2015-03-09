@@ -11,6 +11,8 @@
         android:orderInCategory="99" app:showAsAction="never" />
     <item android:id="@+id/subirVehiculos" android:title="@string/subirVehicilos"
         android:orderInCategory="99" app:showAsAction="never" />
+    <item android:id="@+id/subirEmergencias" android:title="@string/subirEmergencias"
+        android:orderInCategory="99" app:showAsAction="never" />
     <item android:id="@+id/listaremergencias" android:title="Emergencias"
         android:orderInCategory="99" app:showAsAction="never" />
     <item android:id="@+id/settings" android:title="@string/action_settings"

@@ -203,5 +203,14 @@ public class SettingsActivity extends PreferenceActivity {
             bindPreferenceSummaryToValue(findPreference("dispositivo"));
         }
     }
+    protected boolean isValidFragment (String fragmentName) {
+
+        if(SettingsActivity.class.getName().equals(fragmentName)){
+
+            return true;
+
+        }
+        return false;
+    }
 
 }
