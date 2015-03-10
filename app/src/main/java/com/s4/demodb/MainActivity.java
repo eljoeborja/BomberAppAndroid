@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.s4.demodb.db.UsuariosDBOpenHelper;
 import com.s4.demodb.db.util.Usuario;
 import com.s4.demodb.db.util.UsuarioListAdapter;
+import com.s4.demodb.rest.ActualizaEmergencia;
 import com.s4.demodb.rest.ActualizaVehiculo;
 import com.s4.demodb.util.ActivityNavigationListener;
 import com.s4.demodb.util.DeleteDialog;
@@ -138,7 +139,12 @@ public class MainActivity extends ActionBarActivity implements ActivityNavigatio
         }else if(id == R.id.subirVehiculos){
             Intent intent = new Intent(this, ActualizaVehiculo.class);
             startActivity(intent);
-        }else if(id == R.id.settings){
+        }
+        else if(id == R.id.subirEmergencias){
+            Intent intent = new Intent(this, ActualizaEmergencia.class);
+            startActivity(intent);
+        }
+        else if(id == R.id.settings){
             startActivity(new Intent(this,SettingsActivity.class));
         }
 

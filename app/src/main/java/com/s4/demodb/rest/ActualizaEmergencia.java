@@ -66,7 +66,7 @@ public class ActualizaEmergencia extends ActionBarActivity {
         protected Boolean doInBackground(String... objects) {
 
             SQLiteDatabase db = dbOpenHelper.getReadableDatabase();
-            emergencias = Emergencia.getList(db, false);
+            emergencias = Emergencia.getList(db, true);
 
             final String json = new Gson().toJson(emergencias);
 
@@ -80,7 +80,7 @@ public class ActualizaEmergencia extends ActionBarActivity {
             String direccion = PreferenceManager.getDefaultSharedPreferences(ActualizaEmergencia.this.getApplicationContext()).getString("direccion_ip","127.0.0.1");
             String dispositivo = PreferenceManager.getDefaultSharedPreferences(ActualizaEmergencia.this.getApplicationContext()).getString("dispositivo","TABLET1");
 
-            return RestHelper.POST("http://"+direccion+":8080/BomberApp/ws/vehiculo?dispositivo="+dispositivo, json);
+            return RestHelper.POST("http://"+direccion+":8080/BomberApp/ws/emergencia?dispositivo="+dispositivo, json);
         }
 
         // onPostExecute displays the results of the AsyncTask.
