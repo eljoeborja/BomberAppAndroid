@@ -276,7 +276,6 @@ public class Emergencia implements Serializable{
         contentValues.put("eme_comandante",emeComandante);
         contentValues.put("eme_estado",emeEstado);
         contentValues.put("eme_tipoe",emeTipoe);
-        System.out.println("Codigo Original "+emeId);
         String params[] = new String[]{emeId.toString()};
         return db.update("emergencia",contentValues,"eme_id=?",params);
     }

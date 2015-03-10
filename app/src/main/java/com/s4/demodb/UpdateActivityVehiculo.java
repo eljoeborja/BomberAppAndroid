@@ -88,7 +88,9 @@ public class UpdateActivityVehiculo extends ActionBarActivity {
             campoConductor.setText(vehiculo.getVehConductor());
         if(vehiculo.getVehCompaniaSeguro()!=null)
             campoCompaniaSeguro.setText(vehiculo.getVehCompaniaSeguro());
-
+        System.out.println("Clase = "+vehiculo.getVehClase()+" Placa = "+vehiculo.getVehPlaca()+" Modelo = "+vehiculo.getVehModelo());
+        System.out.println("Propietario = "+vehiculo.getVehPropietario()+" SOAT = "+vehiculo.getVehSoat()+" Servicio = "+vehiculo.getVehServicio());
+        System.out.println("Marca = "+vehiculo.getVehMarca()+" Empresa = "+vehiculo.getVehEmpresa()+" Conductor = "+vehiculo.getVehConductor()+" Aseguradora = "+vehiculo.getVehCompaniaSeguro());
         setTitle(getTitle().toString().concat(" ").concat(vehiculo.getVehPlaca()));
 
     }

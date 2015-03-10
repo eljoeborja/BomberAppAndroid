@@ -18,7 +18,6 @@ import android.widget.Toast;
 import com.s4.demodb.db.UsuariosDBOpenHelper;
 import com.s4.demodb.db.util.Emergencia;
 import com.s4.demodb.db.util.EmergenciaListAdapter;
-import com.s4.demodb.db.util.VehiculoListAdapter;
 import com.s4.demodb.util.ActivityNavigationListenerEmergencia;
 import com.s4.demodb.util.DeleteDialogEmergencia;
 
@@ -52,41 +51,6 @@ public class ListEmergenciaActivity extends ActionBarActivity implements Activit
         listView.setAdapter(adapter);
         registerForContextMenu(listView);
 
-
-/*
-        SQLiteDatabase db = dbOpenHelper.getReadableDatabase();
-        Cursor c = db.query("emergencia", null, null, null, null, null, null);
-        List<Emergencia> emergencias = new ArrayList<>();
-
-        if(c.moveToFirst()){
-            do{
-                Integer id = Integer.parseInt(c.getString(0));
-                String fecha = c.getString(1);
-                String hora = c.getString(2);
-                Integer informante = Integer.parseInt(c.getString(3));
-                String informacion_recibida = c.getString(4);
-                Integer medio_informacion = Integer.parseInt(c.getString(5));
-                String otro_medio_informacion = c.getString(6);
-                String persona_confirmacion = c.getString(7);
-                Integer medio_confirmacion = Integer.parseInt(c.getString(8));
-                String descripcion_otro_medio = c.getString(9);
-                String direccion = c.getString(10);
-                Integer inmueble_clase = Integer.parseInt(c.getString(11));
-                String inmueble_propietario = c.getString(12);
-                String inmueble_administrador = c.getString(13);
-                String inmueble_arrendatario = c.getString(14);
-                String novedades = c.getString(15);
-                Integer comandante = Integer.parseInt(c.getString(16));
-                Integer estado = Integer.parseInt(c.getString(17));
-                Integer tipoe = Integer.parseInt(c.getString(18));
-                Emergencia emergencia = new Emergencia(id, fecha, hora, informante, informacion_recibida, medio_informacion, otro_medio_informacion, persona_confirmacion, medio_confirmacion, descripcion_otro_medio, direccion, inmueble_clase, inmueble_propietario, inmueble_administrador, inmueble_arrendatario, novedades, comandante, estado, tipoe);
-                emergencias.add(emergencia);
-            }while (c.moveToNext());
-        }
-        adapter = new EmergenciaListAdapter(this,emergencias);
-        ListView listView = (ListView) findViewById(R.id.listado);
-        listView.setAdapter(adapter);
-        registerForContextMenu(listView);*/
     }
 
     @Override
@@ -106,7 +70,7 @@ public class ListEmergenciaActivity extends ActionBarActivity implements Activit
 
         switch (item.getItemId()){
             case R.id.action_update:
-                Intent intent = new Intent(this,UpdateActivityVehiculo.class);
+                Intent intent = new Intent(this,UpdateActivityEmergencia.class);
                 intent.putExtras(bundle);
                 startActivityForResult(intent,REQUEST_CREATE);
                 return true;

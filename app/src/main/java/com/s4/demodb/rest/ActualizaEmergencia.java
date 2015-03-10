@@ -66,7 +66,7 @@ public class ActualizaEmergencia extends ActionBarActivity {
         protected Boolean doInBackground(String... objects) {
 
             SQLiteDatabase db = dbOpenHelper.getReadableDatabase();
-            emergencias = Emergencia.getList(db, true);
+            emergencias = Emergencia.getList(db, false);
 
             final String json = new Gson().toJson(emergencias);
 
