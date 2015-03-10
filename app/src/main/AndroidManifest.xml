@@ -43,6 +43,10 @@
             android:label="@string/title_activity_list_emergencia" >
         </activity>
         <activity
+            android:name=".UpdateActivityEmergencia"
+            android:label="@string/title_activity_update_emergencia" >
+        </activity>
+        <activity
             android:name=".InsertActivityEmergencia"
             android:label="@string/title_activity_list_emergencia" >
         </activity>

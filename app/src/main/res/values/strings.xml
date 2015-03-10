@@ -17,6 +17,7 @@
     <string name="title_activity_insert">Insertar Usuarios</string>
     <string name="title_activity_update">Actualizar Usuario</string>
     <string name="title_activity_update_vehiculo">Actualizar Vehiculo</string>
+    <string name="title_activity_update_emergencia">Actualizar Emergencia</string>
     <string name="action_settings">Preferencias</string>
     <string name="codigo">Codigo</string>
     <string name="nombre">Nombre</string>
