@@ -34,6 +34,7 @@ import java.util.List;
  * API Guide</a> for more information on developing a Settings UI.
  */
 public class SettingsActivity extends PreferenceActivity {
+
     /**
      * Determines whether to always show the simplified settings UI, where
      * settings are presented in a single list. When false, settings are shown
@@ -55,9 +56,13 @@ public class SettingsActivity extends PreferenceActivity {
     private void setupActionBar() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             // Show the Up button in the action bar.
-//            getActionBar().setDisplayHomeAsUpEnabled(true);
+            if(getActionBar()!=null) {
+                getActionBar().setDisplayHomeAsUpEnabled(true);
+            }
         }
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -84,6 +89,10 @@ public class SettingsActivity extends PreferenceActivity {
 
         setupSimplePreferencesScreen();
     }
+
+
+
+
 
     /**
      * Shows the simplified settings UI if the device configuration if the
@@ -121,6 +130,7 @@ public class SettingsActivity extends PreferenceActivity {
      * Helper method to determine if the device has an extra-large screen. For
      * example, 10" tablets are extra-large.
      */
+
     private static boolean isXLargeTablet(Context context) {
         return (context.getResources().getConfiguration().screenLayout
                 & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_XLARGE;
@@ -205,12 +215,7 @@ public class SettingsActivity extends PreferenceActivity {
     }
     protected boolean isValidFragment (String fragmentName) {
 
-        if(SettingsActivity.class.getName().equals(fragmentName)){
-
-            return true;
-
-        }
-        return false;
+        return true;
     }
 
 }
